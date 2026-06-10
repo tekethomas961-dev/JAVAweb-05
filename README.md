@@ -127,11 +127,3 @@ curl "http://localhost:8080/products/search?name=奶&minStock=20"
 
 测试使用 H2 内存数据库和 `test` profile，不污染本机 MySQL。
 
-## 提交说明
-
-项目源码、`schema.sql`、`data.sql` 和 README 已按作业要求放在 Maven 标准目录中。提交到 Gitee 前建议先执行：
-
-```bash
-mvnw.cmd clean test
-mvnw.cmd clean package
-```
