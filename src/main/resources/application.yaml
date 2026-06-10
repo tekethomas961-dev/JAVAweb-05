@@ -1,0 +1,21 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: StockManagementSystem_MyBatis
+  sql:
+    init:
+      mode: never
+
+mybatis:
+  configuration:
+    cache-enabled: true
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+logging:
+  level:
+    com.example.stock.mapper: debug
+
+stock:
+  warn-threshold: 10

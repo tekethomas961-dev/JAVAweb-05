@@ -1,0 +1,17 @@
+CREATE DATABASE IF NOT EXISTS stock_db DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE stock_db;
+
+CREATE TABLE IF NOT EXISTS product (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    stock INT NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE IF NOT EXISTS stock_log (
+    log_id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    product_id INT NOT NULL,
+    out_quantity INT NOT NULL,
+    operate_time DATETIME NOT NULL,
+    result VARCHAR(20) NOT NULL,
+    CONSTRAINT fk_stock_log_product FOREIGN KEY (product_id) REFERENCES product(id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
